@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Romania Search Examples</title>
+
+        <!-- Google font load, DM Sans and DM Mono (for code) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+        <!-- Link the stylesheet -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Search Examples</h1>
+        </header>
+        <main>
+            <div class="image-container">
+                <img src="images/romania.png">
+            </div>
+            <div class="functions-container">
+                <div class="find-neighbors">
+                    <label for="find-neighbors">Enter city:</label>
+                    <input type="text" id="find-neighbors-input" name="find-neighbors" value="Arad">
+                    <button id="find-neighbors-btn">Find Neighbors</button>
+                </div>
+                <div id="find-neighbors-response" hidden></div>
+            </div>
+        </main>
+
+        <!-- Link the Javascript file -->
+        <script src="script.js"></script>
+    </body>
+</html>
