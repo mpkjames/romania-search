@@ -22,11 +22,15 @@ header h1 {
     text-align: right;
 }
 
+main {
+    padding-bottom: 400px;
+}
+
 /* Center image container div, space from header bar */
 .image-container {
     width: 90%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 0 5px 0;
 }
 
 /* Add border around image, make img fill containter horizontally */
@@ -51,6 +55,7 @@ header h1 {
     display: flex;
     margin: 0 auto;
     width: 30%;
+    min-width: 500px;
     max-width: 800px;
     flex-direction: column;
     align-items: center;
@@ -79,14 +84,15 @@ header h1 {
     transform: scale(1.1);
 }
 
-.find-neighbors {
+.function-item {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
+    margin-top: 30px;
 }
 
-#find-neighbors-response {
+.function-response {
     background-color: #eeeeee;
     color: lightslategray;
     font-style: italic;
@@ -95,5 +101,4 @@ header h1 {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 20px;
 }

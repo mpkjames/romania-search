@@ -22,14 +22,28 @@ const romanian_cities = {
   "Zerind": { "Arad": 75, "Oradea": 71 }
 }
 
+// Get page elements related to find neighbors function
 const find_neighbors_btn = document.getElementById("find-neighbors-btn");
 const find_neighbors_text = document.getElementById("find-neighbors-input");
 const find_neighbors_rspn = document.getElementById("find-neighbors-response");
+// Get page elements related to find closest neighbor function
+const find_nearest_btn = document.getElementById("find-nearest-btn");
+const find_nearest_text = document.getElementById("find-nearest-input");
+const find_nearest_rspn = document.getElementById("find-nearest-response");
 
+// Listeners for find neighbor function
 find_neighbors_btn.addEventListener("click", find_neighbors);
 find_neighbors_text.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     find_neighbors();
+  }
+})
+
+// Listeners for find nearest neighbor function
+find_nearest_btn.addEventListener("click", find_nearest);
+find_nearest_text.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    find_nearest();
   }
 })
 
@@ -49,6 +63,32 @@ function find_neighbors() {
     const neighboring_cities = Object.keys(romanian_cities[entered_city_name]);
     // The line above returns an array, so the join() function makes it more readable
     find_neighbors_rspn.textContent = neighboring_cities.join(", ");
+  }
+}
+
+// Function to find nearest/closest neighboring city
+function find_nearest() {
+  // Get the enetered city name from the input box, remove whitespace, make capitalized
+  const entered_city_name = capitalize(find_nearest_text.value.trim());
+  // Unhide the response area
+  find_nearest_rspn.hidden = false;
+  // If there is no match in the cities dictionary, return an error message on screen
+  if (!Object.hasOwn(romanian_cities, entered_city_name)) {
+    find_nearest_rspn.textContent = "Please enter a valid city name.";
+  }
+  // Otherwise find the closest neighbor
+  else {
+    const neighboring_cities = romanian_cities[entered_city_name];
+    let nearest_city = "";
+    let nearest_distance = Infinity;
+    for (const [key, value] of Object.entries(neighboring_cities)) {
+      if (value < nearest_distance) {
+        nearest_city = key;
+        nearest_distance = value;
+      }
+    }
+    console.log(nearest_city + ", " + nearest_distance + "km")
+    find_nearest_rspn.textContent = nearest_city + ", " + nearest_distance + "km";
   }
 }
 

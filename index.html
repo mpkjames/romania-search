@@ -21,12 +21,21 @@
                 <img src="images/romania.png">
             </div>
             <div class="functions-container">
-                <div class="find-neighbors">
+                <!-- Find neighbors -->
+                <div class="function-item find-neighbors">
                     <label for="find-neighbors">Enter city:</label>
                     <input type="text" id="find-neighbors-input" name="find-neighbors" value="Arad">
                     <button id="find-neighbors-btn">Find Neighbors</button>
                 </div>
-                <div id="find-neighbors-response" hidden></div>
+                <div id="find-neighbors-response" class="function-response" hidden></div>
+
+                <!-- Find closest neighbor -->
+                <div class="function-item find-nearest">
+                    <label for="find-nearest">Enter city:</label>
+                    <input type="text" id="find-nearest-input" name="find-nearest" value="Bucharest">
+                    <button id="find-nearest-btn">Find Closest Neighbor</button>
+                </div>
+                <div id="find-nearest-response" class="function-response" hidden></div>
             </div>
         </main>
 
